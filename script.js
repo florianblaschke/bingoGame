@@ -31,5 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
       fieldPiece.appendChild(text);
       text.innerText = cardArray[1].name;
     }
+  }
   createBoard();
 });

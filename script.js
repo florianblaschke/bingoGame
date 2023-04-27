@@ -12,10 +12,17 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Kind zu sehen" },
     { name: "Ulrike liegt richtig" },
     { name: "BROKKOLI" },
-    { name: "Frage nach Short-Cut" },
+    { name: "CURRYWURST" },
     { name: "Entschuldigung, dass ich reinquatsche…" },
-    { name: "Erst erklärt etwas in Bildern" },
+    { name: "Ernst erklärt etwas in Bildern" },
     { name: "Katze von Ernst" },
+    // "Ich habe eine Frage",
+    // "Currywurst",
+    // "Brokkoli",
+    // "Mächtig",
+    // "Hallo",
+    // "du da",
+    // "bla",
   ];
 
   const grid = document.querySelector(".grid");
@@ -25,12 +32,17 @@ document.addEventListener("DOMContentLoaded", () => {
     for (let i = 0; i < cardArray.length; i++) {
       let fieldPiece = document.createElement("div");
       let text = document.createElement("p");
-      // fieldPiece.setAttribute("class", "div");
-      // text.setAttribute("data-id");
+      text.setAttribute("data-js", "text" + i);
       grid.appendChild(fieldPiece);
       fieldPiece.appendChild(text);
-      text.innerText = cardArray[1].name;
+      const number = Math.round(Math.random() * 15);
+      text.textContent = cardArray[number].name;
+      console.log(number);
+      // const textChosen = cardArray[i].name;
+      // text.textContent = textChosen;
+      // cardArray.splice(textChosen);
     }
+    // cardArray.splice(i);
   }
   createBoard();
 });

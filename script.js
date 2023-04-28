@@ -32,4 +32,4 @@ document.addEventListener("DOMContentLoaded", () => {
       text.innerText = cardArray[1].name;
     }
   createBoard();
-});
+}});

@@ -28,6 +28,9 @@ document.addEventListener("DOMContentLoaded", () => {
       text.setAttribute("data-js", "text" + i);
       grid.appendChild(fieldPiece);
       fieldPiece.appendChild(text);
+      fieldPiece.addEventListener("click", () => {
+        fieldPiece.classList.toggle("hidden");
+      });
     }
     random();
   }

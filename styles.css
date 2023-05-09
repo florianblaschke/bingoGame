@@ -11,6 +11,6 @@ div {
   height: 300px;
 }
 
-p {
-  background-color: red;
+.hidden {
+  background-color: black;
 }

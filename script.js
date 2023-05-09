@@ -16,13 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Entschuldigung, dass ich reinquatsche…" },
     { name: "Ernst erklärt etwas in Bildern" },
     { name: "Katze von Ernst" },
-    // "Ich habe eine Frage",
-    // "Currywurst",
-    // "Brokkoli",
-    // "Mächtig",
-    // "Hallo",
-    // "du da",
-    // "bla",
   ];
 
   const grid = document.querySelector(".grid");
@@ -35,14 +28,26 @@ document.addEventListener("DOMContentLoaded", () => {
       text.setAttribute("data-js", "text" + i);
       grid.appendChild(fieldPiece);
       fieldPiece.appendChild(text);
-      const number = Math.round(Math.random() * 15);
-      text.textContent = cardArray[number].name;
-      console.log(number);
-      // const textChosen = cardArray[i].name;
-      // text.textContent = textChosen;
-      // cardArray.splice(textChosen);
     }
-    // cardArray.splice(i);
+    random();
+  }
+
+  // assigns text randomly
+  function random() {
+    const text = document.querySelectorAll('[data-js*="text"]');
+    text.forEach((part) => {
+      let number = Math.round(Math.random() * cardArray.length);
+      if (cardArray[number] != undefined) {
+        part.textContent = cardArray[number].name;
+        cardArray.splice(number, 1);
+        console.log(number);
+        console.log(cardArray);
+      } else {
+        number = 0;
+        part.textContent = cardArray[number].name;
+        cardArray.splice(number, 1);
+      }
+    });
   }
   createBoard();
 });

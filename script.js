@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
   const cardArray = [
     { name: "Ich habe eine Frage" },
-    { name: "Jemand erwähnt Kinder" },
-    { name: "Frage, die an Franz gehen sollte" },
+    { name: "HANS JUERGEN" },
+    { name: "Irgendein Tier" },
     { name: "Nicole stellt eine Frage" },
     { name: "Alexandra stellt eine Frage" },
     { name: "MÄCHTIG" },
@@ -43,8 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (cardArray[number] != undefined) {
         part.textContent = cardArray[number].name;
         cardArray.splice(number, 1);
-        console.log(number);
-        console.log(cardArray);
       } else {
         number = 0;
         part.textContent = cardArray[number].name;
